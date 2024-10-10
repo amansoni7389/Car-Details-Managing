@@ -1,0 +1,235 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Basic Reset */
+body, h1, h2, p, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Changed the font family to Roboto */
+    background: linear-gradient(to right, #d0d0d0, #f5f5f5); /* Lighter formal gray gradient */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #007BFF; /* Navbar background color */
+    width: 100%;
+    padding: 10px 0;
+    position: fixed; /* Fixed position for the navbar */
+    top: 0; /* Align to the top */
+    z-index: 1000; /* Keep it above other content */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Centering links */
+}
+
+.nav-links li {
+    margin: 0 20px; /* Spacing between links */
+}
+
+.nav-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+.nav-links a:hover {
+    color: #FFD700; /* Color change on hover */
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 2rem; /* Increased font size for better impact */
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px; /* Added letter spacing for modern look */
+    color: #555; /* Updated subheading color */
+}
+
+/* Section Styles */
+section {
+    margin-top: 80px; /* Space for fixed navbar */
+    padding: 20px;
+    width: 80%;
+    max-width: 600px; /* Max width for sections */
+}
+
+/* Form Styles */
+form {
+    background: rgba(255, 255, 255, 0.95); /* Slightly more opaque background */
+    border-radius: 10px;
+    padding: 30px; /* Increased padding for a spacious feel */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px; /* Increased padding for comfort */
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Added shadow transition */
+    font-size: 1rem; /* Set font size for inputs */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+}
+
+/* Hover Effects for Input */
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007BFF; /* Change border color on hover and focus */
+    background-color: #e7f3ff; /* Change background color on hover and focus */
+    color: #333; /* Change text color on hover and focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect */
+}
+
+/* Button Styles */
+button {
+    background-color: #007BFF; /* Updated button color */
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Increased padding for a modern button feel */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Added background color transition */
+    font-size: 1rem;
+}
+
+/* Hover Effects */
+form:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Response Message Styles */
+#responseMessage, #updateMessage, #deleteMessage {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Car Details Section */
+#carDetails {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s;
+}
+
+#carDetails:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Responsive font size */
+    }
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF; /* Updated header color */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey for even rows */
+}
+
+tr:hover {
+    background-color: #ddd; /* Grey on hover */
+}
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        display: none; /* Hide header in mobile view */
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%; /* Space for label */
+        position: relative;
+    }
+
+    td:before {
+        content: attr(data-label); /* Add label before data */
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+/* Spinner Styles */
+.loading-spinner {
+    border: 4px solid rgba(160, 239, 14, 0.858);
+    border-radius: 50%;
+    border-top: 4px solid white;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.button-text {
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#addCar">Add Car</a></li>
+            <li><a href="#updateCar">Update Car</a></li>
+            <li><a href="#deleteCar">Delete Car</a></li>
+            <li><a href="#carDetails">Car Details</a></li>
+            <li><a href="#fetchAllCars">Fetch All Cars</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- Section: Add Car -->
+    <section id="addCar">
+        <h2>Add New Car</h2>
+        <form id="addCarForm">
+            <label for="addCarName">Car Name:</label>
+            <input type="text" id="addCarName" required><br>
+        
+            <label for="addMaxSpeed">Max Speed:</label>
+            <input type="number" id="addMaxSpeed" required><br>
+        
+            <label for="addEngineModel">Engine Model:</label>
+            <input type="text" id="addEngineModel" required><br>
+        
+            <!-- Add Button with spinner -->
+            <button id="addButton" type="submit">
+                <span class="button-text">Add Car</span>
+                <span class="loading-spinner" style="display: none;"></span>
+            </button>
+        </form>
+        
+        <p id="addMessage"></p>
+    </section>
+    
+
+    <!-- Section: Update Car -->
+    <section id="updateCar">
+        <h2>Update Existing Car Details</h2>
+        <form id="updateCarForm">
+            <label for="updateCarId">Car ID:</label>
+            <input type="number" id="updateCarId" required>
+            <label for="updateCarName">New Car Name:</label>
+            <input type="text" id="updateCarName" required>
+            <label for="updateMaxSpeed">New Max Speed:</label>
+            <input type="number" id="updateMaxSpeed" required>
+            <label for="updateEngineModel">New Engine Model:</label>
+            <input type="text" id="updateEngineModel" required>
+            <button type="submit">Update</button>
+            <p id="updateMessage"></p>
+        </form>
+    </section>
+
+    <!-- Section: Delete Car -->
+    <section id="deleteCar">
+        <h2>Delete Car Details</h2>
+        <label for="deleteCarId">Car ID:</label>
+        <input type="number" id="deleteCarId" required>
+        <button id="deleteCarButton">Delete Car</button>
+        <p id="deleteMessage"></p>
+    </section>
+
+    <!-- Section: Car Details -->
+    <section id="carDetails">
+        <h2>Get One Car Details</h2>
+        <label for="productId">Car ID:</label>
+        <input type="number" id="productId" required>
+        <button onclick="asd()">Get Car Details</button>
+        <div>
+            <p></p>
+        </div>
+    </section>
+
+    <!-- Section: Fetch All Cars -->
+    <section id="fetchAllCars">
+        <h2>Get All Cars Details</h2>
+        <button id="fetchAllCarsButton">Fetch All Cars</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Car ID</th>
+                    <th>Car Name</th>
+                    <th>Max Speed</th>
+                    <th>Engine Model</th>
+                </tr>
+            </thead>
+            <tbody id="carTableBody">
+                <!-- Car data will be populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
